@@ -41,6 +41,3 @@ def plot_spikes(max_time, timestep, nb_neurons):
 	pylab.xlabel("Time [ms]")
 	pylab.ylabel("Neuron ID")
 	pylab.show()
-
-# Call plot function
-plot_spikes(1000,1e-3,4)

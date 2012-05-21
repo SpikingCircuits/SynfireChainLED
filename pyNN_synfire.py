@@ -20,6 +20,7 @@ chain_delay = 20
 chain_delay_inh = 4
 chain_weight = 0.1
 chain_weight_inh = 0.05
+total_time = 1000.
 
 # Create neurons
 exc_neurons = []
@@ -68,9 +69,9 @@ for i in range(exc_neurons_nb):
 np.savetxt("Results/input_spikes.dat",input_spikes)
 
 # Run
-run(1000.0)
+run(total_time)
 end()
-print "Simulation done in", time.time() - start_time, "s"
+print "Simulation done in", time.time() - start_time, "s, which means it went", (total_time/1000)/(time.time() - start_time), "times faster than biology."
 
 # Plot
-plot_spikes(1000,0.1,exc_neurons_nb)
+plot_spikes(total_time,0.1,exc_neurons_nb)
