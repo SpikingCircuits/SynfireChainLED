@@ -1,6 +1,10 @@
+### Plot the spikes that results of simulation ###
+
+# Import 
 import pylab
 import numpy
 
+# Plot
 def plot_spikes(max_time, timestep, nb_neurons):
 
 	t = numpy.arange(0,max_time+timestep,timestep)
@@ -38,4 +42,5 @@ def plot_spikes(max_time, timestep, nb_neurons):
 	pylab.ylabel("Neuron ID")
 	pylab.show()
 
+# Call plot function
 plot_spikes(1000,1e-3,4)

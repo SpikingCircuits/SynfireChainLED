@@ -1,26 +1,32 @@
+// Arduino code for the synfire chain visible
+
+// Variables
 int nb_neurons;
 int input;
 
+// Setup
 void setup() {                
   nb_neurons = 13;
+  
+  // Set pins to outputs
   for (int i = 2; i < nb_neurons; i++) {
      pinMode(i, OUTPUT);
   }
   
+  // Init serial
   Serial.begin(38400);
   Serial.flush();  
   
 }
 
+// Main loop
 void loop() {
- 
-   //for (int i = 2; i < nb_neurons; i++) {
-     // digitalWrite(i, LOW);
-  //}
   
+  // Read serial in
   input = Serial.read();
   if (input == '-1') {}
 
+  // Connect events to outputs
   else
   {
       if (input == '2'){ledBlink(2);}
@@ -36,6 +42,7 @@ void loop() {
     
 }
 
+// Make a led blink for 50 ms
 void ledBlink(int pin) {
      digitalWrite(pin, HIGH);
      delay(50);

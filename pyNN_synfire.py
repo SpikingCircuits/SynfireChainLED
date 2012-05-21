@@ -1,3 +1,6 @@
+### Simulation of the synfire chain ###
+
+# Imports
 from pyNN.utility import get_script_args
 from pyNN.errors import RecordingError
 from pyNN.nest import *
@@ -61,10 +64,11 @@ for i in range(exc_neurons_nb):
 	record(exc_neurons[i], "Results/spikes" + str(i) + ".dat")
 	record(inh_neurons[i], "Results/spikes_inh" + str(i) + ".dat")
 
+# Save input spikes
 np.savetxt("Results/input_spikes.dat",input_spikes)
 
+# Run
 run(1000.0)
-
 end()
 print "Simulation done in", time.time() - start_time, "s"
 
